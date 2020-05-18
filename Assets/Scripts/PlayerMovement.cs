@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public CapsuleCollider col;
     public bool isGrounded = true;
-    public bool isDoubleJumping = false;
+    
 
     public int forwardForce;
     public float jumpSpeed;
@@ -39,8 +39,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
             isGrounded = false;
             currentJump++;
-            col.center = new Vector3(0f, 1.8f, 0f);
-            col.height = 1.5f;
+       
 
             
             StartCoroutine(jumpAnim());
@@ -50,13 +49,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetKeyDown("space") && (isGrounded || (maxJump) > currentJump))
         {
-            rb.AddForce(Vector3.up * (jumpSpeed / 1.4f), ForceMode.Impulse);
+            rb.AddForce(Vector3.up * (jumpSpeed / 1.2f), ForceMode.Impulse);
+            gravityMultiplier *= 2;
             isGrounded = false;
             currentJump++;
-            animator.SetBool("isDoubleJumping", true);
-            StartCoroutine(doubleJumpAnim());
-            isDoubleJumping = true;
-            col.center = new Vector3(0f, 2f, 0f);
+            //animator.SetBool("isDoubleJumping", true);
+            
+            
+            
+            
         }
 
 
@@ -74,7 +75,8 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
             currentJump = 0;
-            isDoubleJumping = false;
+            
+            gravityMultiplier = 10;
 
             Debug.Log("On Floor!");
         }
@@ -92,31 +94,15 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(jumpTime);
         animator.SetBool("isJumping", false);
-        if(!isDoubleJumping)
-        {
-            col.center = new Vector3(0f, 0.86f, 0f);
-            col.height = 1.72f;
-        }
+        
+        
 
         Debug.Log("wait");
 
 
     }
 
-    IEnumerator doubleJumpAnim()
-    {
-
-
-        yield return new WaitForSeconds(doubleJumpTime);
-        animator.SetBool("isDoubleJumping", false);
-       
-        col.center = new Vector3(0f, 0.86f, 0f);
-        col.height = 1.72f;
-
-        Debug.Log("wait");
-
-
-    }
+   
 
 
 
