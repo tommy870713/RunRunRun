@@ -1,0 +1,16 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	449017952	10	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\10_B85C86E1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\10		52768
+	521903775	2	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\2_0237A938.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\2		56864
+	537136526	1	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\1_D38C9D5C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\1		52016
+	689709260	11	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\11_E3BF0067.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\11		59752
+	764008043	5	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\5_2440DBEF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\5		39384
+	779267493	6	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\6_573A5853.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\6		39392
+	800857879	9	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\9_F3226C2D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\9		37992
+	808324364	3	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\3_E359030D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\3		45568
+	867600277	7	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\7_14594E0C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\7		35088
+	874608700	4	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\4_E5428708.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\4		48332
+	1009692161	8	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Mac\SFX\8_F9647B58.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\8		36332
+

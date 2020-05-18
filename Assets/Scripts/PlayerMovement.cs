@@ -15,11 +15,11 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed;
     public int maxJump = 2;
     public int currentJump = 0;
-    public int gravityMultiplier;
+    
     public Animator animator;
 
-    
 
+    public float gravityMultiplier;
     public float jumpTime;
     public float doubleJumpTime;
 
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyDown("space") && (isGrounded || (maxJump) > currentJump))
         {
             rb.AddForce(Vector3.up * (jumpSpeed / 1.2f), ForceMode.Impulse);
-            gravityMultiplier *= 2;
+            gravityMultiplier *= 1.5f;
             isGrounded = false;
             currentJump++;
             //animator.SetBool("isDoubleJumping", true);
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             currentJump = 0;
             
-            gravityMultiplier = 10;
+            gravityMultiplier = 6f;
 
             Debug.Log("On Floor!");
         }
