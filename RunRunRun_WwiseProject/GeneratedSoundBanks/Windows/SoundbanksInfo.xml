@@ -21,6 +21,7 @@
 			<ShortName>main</ShortName>
 			<Path>main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3563975020" Name="Cancel_Point" ObjectPath="\Events\Default Work Unit\Cancel_Point" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Footsteps" DurationType="OneShot" DurationMin="0.172187" DurationMax="0.329358">
 					<IncludedMemoryFiles>
 						<File Id="449017952" Language="SFX">
@@ -66,6 +67,14 @@
 						<File Id="1009692161" Language="SFX">
 							<ShortName>8.wav</ShortName>
 							<Path>SFX\8_F9647B58.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1976879309" Name="Point" ObjectPath="\Events\Default Work Unit\Point" DurationType="OneShot" DurationMin="2.407831" DurationMax="2.407831">
+					<IncludedMemoryFiles>
+						<File Id="838199278" Language="SFX">
+							<ShortName>Point.wav</ShortName>
+							<Path>SFX\Point_626CD08B.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

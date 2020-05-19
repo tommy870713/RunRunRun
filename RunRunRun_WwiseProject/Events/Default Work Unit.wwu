@@ -14,6 +14,31 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Point" ID="{942F48C2-CF8F-4E63-BD06-31982D768C9F}">
+					<ChildrenList>
+						<Action Name="" ID="{BFBD5FDD-4D03-4341-9376-EC80BE259AE0}" ShortID="247649650">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Point" ID="{CC9353C7-5A94-4E41-A9E8-2CC200C96B9C}" WorkUnitID="{436DA6DC-EC71-4EC2-8997-D6FB313F6633}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Cancel_Point" ID="{AF9E0D02-CE71-49CD-860D-6AC8BD511012}">
+					<ChildrenList>
+						<Action Name="" ID="{99BE6BA8-53A1-4C71-8A32-7C42F5605430}" ShortID="756556738">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Point" ID="{CC9353C7-5A94-4E41-A9E8-2CC200C96B9C}" WorkUnitID="{436DA6DC-EC71-4EC2-8997-D6FB313F6633}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

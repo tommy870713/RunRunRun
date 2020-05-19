@@ -6,6 +6,8 @@
 				<SoundBank Name="main" ID="{6FA1F587-93AD-4923-86BF-7FC70FBB84FE}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Footsteps" ID="{C499BB3F-7886-4533-B6FB-F7F58B252038}" WorkUnitID="{36C267B4-6BA7-4A1E-84A7-52708D1B1DA5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Cancel_Point" ID="{AF9E0D02-CE71-49CD-860D-6AC8BD511012}" WorkUnitID="{36C267B4-6BA7-4A1E-84A7-52708D1B1DA5}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Point" ID="{942F48C2-CF8F-4E63-BD06-31982D768C9F}" WorkUnitID="{36C267B4-6BA7-4A1E-84A7-52708D1B1DA5}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

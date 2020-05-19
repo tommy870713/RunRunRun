@@ -10,7 +10,7 @@ public class PlayerFootsteps : MonoBehaviour
         if(PlayerMovement.isGrounded)
         {
             footsteps.Post(gameObject);
-            Debug.Log("step");
+            
         }
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Obstacle
+  - Point
   layers:
   - Default
   - TransparentFX

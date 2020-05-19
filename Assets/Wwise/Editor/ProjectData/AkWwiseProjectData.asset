@@ -40,7 +40,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5d0849e98484cb4883dd24131ce0b5c8
     GuidInternal: 
-    m_lastTime: -8586117881062117168
+    m_lastTime: -8586117705012949122
     List:
     - name: main
       guid: 87f5a16fad93234986bf7fc70fbb84fe
@@ -56,8 +56,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: b467c236a76b1e4a84a752708d1b1da5
     GuidInternal: 
-    m_lastTime: -8586117885449516898
+    m_lastTime: -8586117705012849391
     List:
+    - name: Cancel_Point
+      guid: 020d9eaf71cecd49860d6ac8bd511012
+      id: 3563975020
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Cancel_Point
+        ObjectType: 3
+      Path: Default Work Unit\Cancel_Point
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Footsteps
       guid: 3fbb99c486783345b6fbf7f58b252038
       id: 2385628198
@@ -70,6 +82,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.329358
       minDuration: 0.172187
+    - name: Point
+      guid: c2482f948fcf634ebd0631982d768c9f
+      id: 1976879309
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Point
+        ObjectType: 3
+      Path: Default Work Unit\Point
+      maxAttenuation: 0
+      maxDuration: 2.407831
+      minDuration: 2.407831
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -100,5 +124,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /RunRunRun_WwiseProject
+  - /RunRunRun_WwiseProject/Events
+  - /RunRunRun_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

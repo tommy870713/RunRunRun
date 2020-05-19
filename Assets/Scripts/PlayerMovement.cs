@@ -6,6 +6,7 @@ using System.Threading;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
     public Rigidbody rb;
     public CapsuleCollider col;
     public bool isGrounded = true;
@@ -16,50 +17,46 @@ public class PlayerMovement : MonoBehaviour
     public int maxJump = 2;
     public int currentJump = 0;
     
-    public Animator animator;
-
-
+   
     public float gravityMultiplier;
     public float jumpTime;
     public float doubleJumpTime;
-
-   
-
- 
+    public float moveSpeed;
 
     void Update()
     {
        //pushes the character forward constantly
         rb.AddForce(forwardForce * Time.deltaTime, 0, 0);
 
+        //Moving Left & Right
+        if(Input.GetKey("a"))
+        {
+            rb.AddForce(Vector3.forward * moveSpeed, ForceMode.Acceleration);
+        }
+
+        if (Input.GetKey("d"))
+        {
+            rb.AddForce(Vector3.back * moveSpeed, ForceMode.Acceleration);
+        }
+
         //Jumping
-        if(Input.GetKeyDown("space") && (isGrounded || (maxJump -1) > currentJump))
+        if (Input.GetKeyDown("space") && (isGrounded || (maxJump -1) > currentJump))
         {
             animator.SetBool("isJumping", true);
             rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
             isGrounded = false;
-            currentJump++;
-       
-
-            
+            currentJump++;                   
             StartCoroutine(jumpAnim());
             
-
-
         }
         else if (Input.GetKeyDown("space") && (isGrounded || (maxJump) > currentJump))
         {
-            rb.AddForce(Vector3.up * (jumpSpeed / 1.2f), ForceMode.Impulse);
-            gravityMultiplier *= 1.5f;
+            rb.AddForce(Vector3.up * (jumpSpeed / 1.4f), ForceMode.Impulse);
+            gravityMultiplier *= 1.4f;
             isGrounded = false;
             currentJump++;
-            //animator.SetBool("isDoubleJumping", true);
-            
-            
-            
-            
+            //animator.SetBool("isDoubleJumping", true);   
         }
-
 
         //Gravity Multiplier
         if(!isGrounded)
@@ -78,13 +75,17 @@ public class PlayerMovement : MonoBehaviour
             
             gravityMultiplier = 6f;
 
-            Debug.Log("On Floor!");
+            
         }
         else if(collision.gameObject.tag == "Obstacle")
         {
-            SceneManager.LoadScene("Intro"); 
+            AkSoundEngine.PostEvent("Cancel_Point", gameObject);
+            SceneManager.LoadScene("Intro");           
+        }  
+        else if(collision.gameObject.tag == "Point")
+        {
+            Destroy(collision.gameObject);                    
         }
-
         
     }
 
@@ -95,16 +96,10 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(jumpTime);
         animator.SetBool("isJumping", false);
         
-        
-
-        Debug.Log("wait");
-
 
     }
 
    
 
-
-
-
+  
 }
