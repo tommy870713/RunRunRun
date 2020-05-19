@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -9,19 +8,18 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public Rigidbody rb;
     public CapsuleCollider col;
-    public bool isGrounded = true;
     
-
+       
     public int forwardForce;
     public float jumpSpeed;
-    public int maxJump = 2;
-    public int currentJump = 0;
-    
-   
     public float gravityMultiplier;
     public float jumpTime;
     public float doubleJumpTime;
     public float moveSpeed;
+    public bool isGrounded = true;
+
+    private int maxJump = 2;
+    private int currentJump = 0;
 
     void Update()
     {
@@ -52,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyDown("space") && (isGrounded || (maxJump) > currentJump))
         {
             rb.AddForce(Vector3.up * (jumpSpeed / 1.4f), ForceMode.Impulse);
-            gravityMultiplier *= 1.4f;
+            gravityMultiplier *= 2.0f;
             isGrounded = false;
             currentJump++;
             //animator.SetBool("isDoubleJumping", true);   
@@ -80,11 +78,16 @@ public class PlayerMovement : MonoBehaviour
         else if(collision.gameObject.tag == "Obstacle")
         {
             AkSoundEngine.PostEvent("Cancel_Point", gameObject);
-            SceneManager.LoadScene("Intro");           
+            FindObjectOfType<GameManager>().EndGame();
         }  
         else if(collision.gameObject.tag == "Point")
         {
             Destroy(collision.gameObject);                    
+        }
+        else if(collision.gameObject.tag == "Finish")
+        {
+            animator.SetBool("Win", true);
+            forwardForce = 0;
         }
         
     }
