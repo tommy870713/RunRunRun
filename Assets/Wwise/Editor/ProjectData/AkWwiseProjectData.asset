@@ -56,7 +56,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: b467c236a76b1e4a84a752708d1b1da5
     GuidInternal: 
-    m_lastTime: -8586117705012849391
+    m_lastTime: -8586091073240823789
     List:
     - name: Cancel_Point
       guid: 020d9eaf71cecd49860d6ac8bd511012
@@ -80,8 +80,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Footsteps
       maxAttenuation: 0
-      maxDuration: 0.329358
-      minDuration: 0.172187
+      maxDuration: 0.637411
+      minDuration: 0.489961
     - name: Point
       guid: c2482f948fcf634ebd0631982d768c9f
       id: 1976879309
@@ -124,7 +124,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /RunRunRun_WwiseProject
-  - /RunRunRun_WwiseProject/Events
-  - /RunRunRun_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

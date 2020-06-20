@@ -22,51 +22,19 @@
 			<Path>main.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3563975020" Name="Cancel_Point" ObjectPath="\Events\Default Work Unit\Cancel_Point" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Footsteps" DurationType="OneShot" DurationMin="0.172187" DurationMax="0.329358">
+				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Footsteps" DurationType="OneShot" DurationMin="0.489961" DurationMax="0.637411">
 					<IncludedMemoryFiles>
-						<File Id="449017952" Language="SFX">
-							<ShortName>10.wav</ShortName>
-							<Path>SFX\10_B85C86E1.wem</Path>
+						<File Id="75120256" Language="SFX">
+							<ShortName>Grass-03.wav</ShortName>
+							<Path>SFX\Grass-03_B294B406.wem</Path>
 						</File>
-						<File Id="521903775" Language="SFX">
-							<ShortName>2.wav</ShortName>
-							<Path>SFX\2_0237A938.wem</Path>
+						<File Id="397923829" Language="SFX">
+							<ShortName>Grass-02.wav</ShortName>
+							<Path>SFX\Grass-02_8194D41F.wem</Path>
 						</File>
-						<File Id="537136526" Language="SFX">
-							<ShortName>1.wav</ShortName>
-							<Path>SFX\1_D38C9D5C.wem</Path>
-						</File>
-						<File Id="689709260" Language="SFX">
-							<ShortName>11.wav</ShortName>
-							<Path>SFX\11_E3BF0067.wem</Path>
-						</File>
-						<File Id="764008043" Language="SFX">
-							<ShortName>5.wav</ShortName>
-							<Path>SFX\5_2440DBEF.wem</Path>
-						</File>
-						<File Id="779267493" Language="SFX">
-							<ShortName>6.wav</ShortName>
-							<Path>SFX\6_573A5853.wem</Path>
-						</File>
-						<File Id="800857879" Language="SFX">
-							<ShortName>9.wav</ShortName>
-							<Path>SFX\9_F3226C2D.wem</Path>
-						</File>
-						<File Id="808324364" Language="SFX">
-							<ShortName>3.wav</ShortName>
-							<Path>SFX\3_E359030D.wem</Path>
-						</File>
-						<File Id="867600277" Language="SFX">
-							<ShortName>7.wav</ShortName>
-							<Path>SFX\7_14594E0C.wem</Path>
-						</File>
-						<File Id="874608700" Language="SFX">
-							<ShortName>4.wav</ShortName>
-							<Path>SFX\4_E5428708.wem</Path>
-						</File>
-						<File Id="1009692161" Language="SFX">
-							<ShortName>8.wav</ShortName>
-							<Path>SFX\8_F9647B58.wem</Path>
+						<File Id="643778085" Language="SFX">
+							<ShortName>Grass-01.wav</ShortName>
+							<Path>SFX\Grass-01_7EA349C6.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

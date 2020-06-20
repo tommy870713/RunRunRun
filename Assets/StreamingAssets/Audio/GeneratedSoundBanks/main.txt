@@ -1,0 +1,11 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1976879309	Point			\Default Work Unit\Point	
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+	3563975020	Cancel_Point			\Default Work Unit\Cancel_Point	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	75120256	Grass-03	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Windows\SFX\Grass-03_15DD8893.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep_Grass\Grass-03		109304
+	397923829	Grass-02	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Windows\SFX\Grass-02_05575C6B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep_Grass\Grass-02		101168
+	643778085	Grass-01	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Windows\SFX\Grass-01_E1B1A3C1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep_Grass\Grass-01		89024
+	838199278	Point	D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Windows\SFX\Point_626CD08B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Point		462368
+

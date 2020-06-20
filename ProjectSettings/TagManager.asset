@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Point
   - Point Check
+  - Fall Check
+  - Victory
   layers:
   - Default
   - TransparentFX

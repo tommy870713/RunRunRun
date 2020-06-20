@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>D:\Unity\RunRunRun\RunRunRun_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Unity\RunRunRun\RunRunRun_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Unity\RunRunRun\Assets\StreamingAssets\Audio\GeneratedSoundBanks\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Unity\RunRunRun\RunRunRun_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\main</ObjectPath>
+			<ShortName>main</ShortName>
+			<Path>main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3563975020" Name="Cancel_Point" ObjectPath="\Events\Default Work Unit\Cancel_Point" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2385628198" Name="Footsteps" ObjectPath="\Events\Default Work Unit\Footsteps" DurationType="OneShot" DurationMin="0.489961" DurationMax="0.637411">
+					<IncludedMemoryFiles>
+						<File Id="75120256" Language="SFX">
+							<ShortName>Grass-03.wav</ShortName>
+							<Path>SFX\Grass-03_15DD8893.wem</Path>
+						</File>
+						<File Id="397923829" Language="SFX">
+							<ShortName>Grass-02.wav</ShortName>
+							<Path>SFX\Grass-02_05575C6B.wem</Path>
+						</File>
+						<File Id="643778085" Language="SFX">
+							<ShortName>Grass-01.wav</ShortName>
+							<Path>SFX\Grass-01_E1B1A3C1.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1976879309" Name="Point" ObjectPath="\Events\Default Work Unit\Point" DurationType="OneShot" DurationMin="2.407831" DurationMax="2.407831">
+					<IncludedMemoryFiles>
+						<File Id="838199278" Language="SFX">
+							<ShortName>Point.wav</ShortName>
+							<Path>SFX\Point_626CD08B.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

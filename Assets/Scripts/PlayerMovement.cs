@@ -1,108 +1,149 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
     public Rigidbody rb;
-    public CapsuleCollider col;
-    
-       
-    public int forwardForce;
+   
     public float jumpSpeed;
-    public float gravityMultiplier;
     public float jumpTime;
-    public float doubleJumpTime;
     public float moveSpeed;
     public bool isGrounded = true;
+    
+    public bool isJumping;
 
-    private int maxJump = 2;
-    private int currentJump = 0;
-
-    void Update()
+    private void Start()
     {
-       //pushes the character forward constantly
-        rb.AddForce(forwardForce * Time.deltaTime, 0, 0);
-
-        //Moving Left & Right
-        if(Input.GetKey("a"))
-        {
-            rb.AddForce(Vector3.forward * moveSpeed, ForceMode.Acceleration);
-        }
-
-        if (Input.GetKey("d"))
-        {
-            rb.AddForce(Vector3.back * moveSpeed, ForceMode.Acceleration);
-        }
-
-        //Jumping
-        if (Input.GetKeyDown("space") && (isGrounded || (maxJump -1) > currentJump))
-        {
-            animator.SetBool("isJumping", true);
-            rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
-            isGrounded = false;
-            currentJump++;                   
-            StartCoroutine(jumpAnim());
-            
-        }
-        else if (Input.GetKeyDown("space") && (isGrounded || (maxJump) > currentJump))
-        {
-            rb.AddForce(Vector3.up * (jumpSpeed / 1.4f), ForceMode.Impulse);
-            gravityMultiplier *= 2.0f;
-            isGrounded = false;
-            currentJump++;
-            //animator.SetBool("isDoubleJumping", true);   
-        }
-
-        //Gravity Multiplier
-        if(!isGrounded)
-        {
-            rb.AddForce(Vector3.down * gravityMultiplier, ForceMode.Acceleration);
-        }
+        moveSpeed = 15;
+        jumpSpeed = 4.15f;
+        isJumping = false;
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void FixedUpdate()
     {
+
+        //Constant Velocity moving the character forward (x direction)z
+        rb.velocity = new Vector3(moveSpeed, rb.velocity.y, rb.velocity.z);
+
+        if ((Input.GetKeyDown("space") || Input.GetKey("space")) && isGrounded)
+        {
+            isJumping = true;
+            isGrounded = false;            
+            animator.SetBool("Jump", true);
+            rb.AddForce(Vector3.up * jumpSpeed, ForceMode.Impulse);
+            StartCoroutine(animWait());          
+        }
+        else if ((Input.GetKeyDown("f") || Input.GetKey("f")) && isGrounded)
+        {
+           
+            isGrounded = false;
+            animator.SetBool("Flip", true);
+            rb.useGravity = false;
+            StartCoroutine(delay());
+        }
+        else if ((Input.GetKeyDown("s") || Input.GetKey("s")) && isGrounded)
+        {
+            
+            animator.SetBool("Slide", true);
+            
+            StartCoroutine(delayAgain());
+            Debug.Log("Slide");
+        }
+        else if (Input.GetKeyDown("p"))
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+
+        if (isJumping)
+        {
+            rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
+        }
+
+       
+                       
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+       
+     
+        if(collision.gameObject.tag == "Finish")
+        {
+            StartCoroutine(winWait());
+        }
+
         if (collision.gameObject.tag == "Floor")
         {
             isGrounded = true;
-            currentJump = 0;
-            
-            gravityMultiplier = 6f;
-
-            
-        }
-        else if(collision.gameObject.tag == "Obstacle")
-        {
-            AkSoundEngine.PostEvent("Cancel_Point", gameObject);
-            FindObjectOfType<GameManager>().EndGame();
-        }  
-        else if(collision.gameObject.tag == "Point")
-        {
-            Destroy(collision.gameObject);                    
-        }
-        else if(collision.gameObject.tag == "Finish")
-        {
-            animator.SetBool("Win", true);
-            forwardForce = 0;
+            isJumping = false;
+            rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
         }
         
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            Debug.Log("You Lose");
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+          
     }
 
-    IEnumerator jumpAnim()
+    private void OnTriggerEnter(Collider other)
     {
-        
-
-        yield return new WaitForSeconds(jumpTime);
-        animator.SetBool("isJumping", false);
-        
-
+        if (other.gameObject.tag == "Fall Check")
+        {
+            isGrounded = false;
+            Debug.Log("Falling");
+        }
     }
 
+
+
+    IEnumerator animWait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("Jump", false);
+        
+        
+        
+    }
+
+    IEnumerator delay()
+    {
+        yield return new WaitForSeconds(1.0f);
+        animator.SetBool("Flip", false);
+        rb.useGravity = true;
+    }
+
+    IEnumerator winWait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("Victory", true);
+        moveSpeed = 0;
+    }
    
+    IEnumerator delayAgain()
+    {
+        yield return new WaitForSeconds(0.5f);
+        
+        animator.SetBool("Slide", false);
+    }    
+
+    void callFootstep()
+    {
+        //AkSoundEngine.PostEvent("Footsteps", gameObject);
+        //Debug.Log("Step");
+    }
 
   
+
+
+
+
+
 }
