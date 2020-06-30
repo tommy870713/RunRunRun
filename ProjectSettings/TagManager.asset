@@ -10,6 +10,7 @@ TagManager:
   - Point Check
   - Fall Check
   - Victory
+  - Inner
   layers:
   - Default
   - TransparentFX

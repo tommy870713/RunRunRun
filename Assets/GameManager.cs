@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("samplescene");
     }
 
 
